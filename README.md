@@ -62,7 +62,7 @@ The module also listens for control messages from other nodes:
 
 ### Components
 
-- **Microcontroller:** ESP32-C6-Super-Mini
+- **Microcontroller:** [Waveshare ESP32-C6-Zero](https://www.waveshare.com/esp32-c6-zero.htm?aff_id=Trailcurrent) — selected for its extensive documentation, small footprint, pre-soldered programming pins, castellations for direct PCB integration, and low power consumption
 - **CAN Transceiver:** SN65HVD230
 - **Sensors:** Normally Open (NO) reed switches
 - **Address Selection:** 4-position DIP switch (3 address bits + CAN termination)
