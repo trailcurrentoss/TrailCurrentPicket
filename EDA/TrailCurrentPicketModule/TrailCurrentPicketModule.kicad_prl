@@ -59,7 +59,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "TrailCurrentCabinetAndDoorSensorModule.kicad_prl",
+    "filename": "TrailCurrentPicketModule.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

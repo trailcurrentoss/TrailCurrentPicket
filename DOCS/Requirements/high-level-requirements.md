@@ -2,12 +2,12 @@
 
 ## 1. Project Overview
 
-**Project Title:** Cabinet and Door Sensing Module
+**Project Title:** Picket Module
 
 **Description:** A microcontroller-based system that monitors the status of doors and cabinets. It will be used to make the high level system contextually aware of which doors and or cabinets are currently open or closed.
 
-**Objective:**  
-To design and implement a reliable, low-power, and cost-effective microcontroller-based system for cabinet and door status monitoring that can operate autonomously and send data over the CAN bus.
+**Objective:**
+To design and implement a reliable, low-power, and cost-effective microcontroller-based system for door and cabinet status monitoring that can operate autonomously and send data over the CAN bus.
 
 ---
 

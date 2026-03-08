@@ -211,7 +211,7 @@
 		)
 		(path "/c9c1292f-4802-43e7-abec-6656ea390be4")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -716,7 +716,7 @@
 		)
 		(path "/3da27064-1493-44cc-b91e-3879e9bf3ef7")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -1221,7 +1221,7 @@
 		)
 		(path "/ab23eb82-aa4d-428c-9a33-c885e9e7658c")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -1726,7 +1726,7 @@
 		)
 		(path "/ece8b8b4-15f7-4585-9116-600fce05c648")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -2231,7 +2231,7 @@
 		)
 		(path "/22a310dd-fb89-44bf-9402-92be0d27b0c3")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -2736,7 +2736,7 @@
 		)
 		(path "/4a83a24d-c3d2-4fa1-b07e-3c9e5c47ae2f")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -3241,7 +3241,7 @@
 		)
 		(path "/19690a63-f35e-44c5-b17c-790d956d8761")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -3746,7 +3746,7 @@
 		)
 		(path "/80ed2f9c-b989-44d5-a6a6-a27587cd4653")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -4251,7 +4251,7 @@
 		)
 		(path "/5fd17c7d-d7c6-41cd-9956-b4f9b64db164")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -4798,7 +4798,7 @@
 		)
 		(path "/6cbf4c47-2241-4984-9724-7ef67959d6b7")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -3.425 -2.555)
@@ -5140,7 +5140,7 @@
 		)
 		(path "/33693d9e-a1c4-403a-b911-604b68775b9a")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5 -3.75)
@@ -5647,7 +5647,7 @@
 		)
 		(path "/13565190-045f-478b-84ca-002075aa50b2")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 9.22 -13.22)
@@ -6372,7 +6372,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/0c6a34df-5bfe-4074-b977-a77edf2a8457")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.727064 -0.91)
@@ -6635,7 +6635,7 @@
 		)
 		(path "/b1355322-dfd6-4166-b31f-31a1cf562464")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -15.12 9.12)
@@ -8036,7 +8036,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/f6ac7cbe-7833-47e9-a5e3-a24b35971336")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.727064 0.91)
@@ -8273,7 +8273,7 @@
 		)
 		(path "/efd185d9-83ab-4bec-9784-0c0fd8463649")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 5.12 -5.92)
@@ -8610,7 +8610,7 @@
 		)
 		(path "/d0b9f906-9ae6-466b-93cf-05d7255feb35")
 		(sheetname "/")
-		(sheetfile "TrailCurrentCabinetAndDoorSensorModule.kicad_sch")
+		(sheetfile "TrailCurrentPicketModule.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5.73 1.75)

@@ -1,4 +1,4 @@
-# TrailCurrent Cabinet and Door Sensor
+# TrailCurrent Picket
 
 Sensor module that monitors cabinet and door open/closed states using reed switches and reports status over a CAN bus interface. Part of the [TrailCurrent](https://trailcurrent.com) open-source vehicle platform.
 
@@ -28,14 +28,14 @@ Each module uses a 3-position DIP switch to select its CAN message ID from a res
 
 | DIP SW3 | DIP SW2 | DIP SW1 | Address | CAN ID | DBC Message Name     |
 |---------|---------|---------|---------|--------|----------------------|
-| OFF     | OFF     | OFF     | 0       | 0x0A   | CabinetDoorStatus0   |
-| OFF     | OFF     | ON      | 1       | 0x0B   | CabinetDoorStatus1   |
-| OFF     | ON      | OFF     | 2       | 0x0C   | CabinetDoorStatus2   |
-| OFF     | ON      | ON      | 3       | 0x0D   | CabinetDoorStatus3   |
-| ON      | OFF     | OFF     | 4       | 0x0E   | CabinetDoorStatus4   |
-| ON      | OFF     | ON      | 5       | 0x0F   | CabinetDoorStatus5   |
-| ON      | ON      | OFF     | 6       | 0x10   | CabinetDoorStatus6   |
-| ON      | ON      | ON      | 7       | 0x11   | CabinetDoorStatus7   |
+| OFF     | OFF     | OFF     | 0       | 0x0A   | PicketStatus0        |
+| OFF     | OFF     | ON      | 1       | 0x0B   | PicketStatus1        |
+| OFF     | ON      | OFF     | 2       | 0x0C   | PicketStatus2        |
+| OFF     | ON      | ON      | 3       | 0x0D   | PicketStatus3        |
+| ON      | OFF     | OFF     | 4       | 0x0E   | PicketStatus4        |
+| ON      | OFF     | ON      | 5       | 0x0F   | PicketStatus5        |
+| ON      | ON      | OFF     | 6       | 0x10   | PicketStatus6        |
+| ON      | ON      | ON      | 7       | 0x11   | PicketStatus7        |
 
 DIP switch position 4 enables the 120-ohm CAN bus termination resistor.
 
@@ -105,7 +105,7 @@ See [KICAD_ENVIRONMENT_SETUP.md](https://github.com/trailcurrentoss/TrailCurrent
 1. **Set up environment variables** (see Library Dependencies above)
 2. **Open KiCAD:**
    ```bash
-   kicad EDA/TrailCurrentCabinetAndDoorSensorModule/TrailCurrentCabinetAndDoorSensorModule.kicad_pro
+   kicad EDA/TrailCurrentPicketModule/TrailCurrentPicketModule.kicad_pro
    ```
 3. **Verify libraries load** - All symbol and footprint libraries should resolve without errors
 4. **View 3D models** - Open PCB and press `Alt+3` to view the 3D visualization
@@ -159,7 +159,7 @@ All dependencies are automatically resolved by PlatformIO during the build proce
 │   └── Requirements/
 │       └── high-level-requirements.md
 ├── EDA/                          # KiCAD hardware design files
-│   └── TrailCurrentCabinetAndDoorSensorModule/
+│   └── TrailCurrentPicketModule/
 │       ├── *.kicad_pro           # KiCAD project
 │       ├── *.kicad_sch           # Schematic
 │       └── *.kicad_pcb           # PCB layout

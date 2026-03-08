@@ -3387,7 +3387,7 @@
 			(uuid "f0c3b04c-be87-4215-b8bf-ba6c068184ad")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR015")
 					(unit 1)
@@ -3454,7 +3454,7 @@
 			(uuid "ee2c7056-d224-4657-9787-71c00ee06fac")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "R2")
 					(unit 1)
@@ -3720,7 +3720,7 @@
 			(uuid "d0f2f25f-c09a-4a6f-abc4-62d81814ca3e")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J3")
 					(unit 1)
@@ -3828,7 +3828,7 @@
 			(uuid "40b52f64-ed70-4dab-8e59-bab14651ebba")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J6")
 					(unit 1)
@@ -3895,7 +3895,7 @@
 			(uuid "53b927cf-53f8-4e41-bd9d-92ea40cf4644")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR07")
 					(unit 1)
@@ -4003,7 +4003,7 @@
 			(uuid "9074f917-eaa5-4439-ac58-8b1762b5f207")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J11")
 					(unit 1)
@@ -4070,7 +4070,7 @@
 			(uuid "7b74eb74-799f-41a8-af2d-db9027372ff5")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR0103")
 					(unit 1)
@@ -4178,7 +4178,7 @@
 			(uuid "fb981a00-804d-4bfa-a232-ee787dad3415")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J10")
 					(unit 1)
@@ -4245,7 +4245,7 @@
 			(uuid "da70997e-46be-48ca-8b2e-844407ae0535")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR04")
 					(unit 1)
@@ -4312,7 +4312,7 @@
 			(uuid "8c64e94f-e69d-4624-afec-2279031eb3f7")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR019")
 					(unit 1)
@@ -4377,7 +4377,7 @@
 			(uuid "d46fec18-9c32-4eb9-8902-faa86e833521")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR05")
 					(unit 1)
@@ -4444,7 +4444,7 @@
 			(uuid "2089557d-572c-41db-8cb9-736b3efe7442")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR020")
 					(unit 1)
@@ -4552,7 +4552,7 @@
 			(uuid "6dba483b-ae19-470a-83ba-d2305d15d811")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J4")
 					(unit 1)
@@ -4619,7 +4619,7 @@
 			(uuid "43e81d12-7d2b-4c9b-82ec-0765b06de93b")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR03")
 					(unit 1)
@@ -4686,7 +4686,7 @@
 			(uuid "2cc61ee1-7238-4a54-ada0-854735d82e19")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR031")
 					(unit 1)
@@ -4794,7 +4794,7 @@
 			(uuid "885e62a3-c991-4142-99c7-6559d1938e59")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J7")
 					(unit 1)
@@ -4861,7 +4861,7 @@
 			(uuid "24060418-af7b-4147-b7e7-0125bc97f24b")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR030")
 					(unit 1)
@@ -4928,7 +4928,7 @@
 			(uuid "724e82af-0a55-48cf-b0f2-7b8733c90eb1")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR032")
 					(unit 1)
@@ -4993,7 +4993,7 @@
 			(uuid "2cdbbe9b-f49b-45f6-b237-7fc2ed6317d7")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR02")
 					(unit 1)
@@ -5321,7 +5321,7 @@
 			(uuid "8ec2dd4e-407a-49f0-bdb9-355342099b42")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J8")
 					(unit 1)
@@ -5387,7 +5387,7 @@
 			(uuid "1cc267f9-e254-43a7-86f1-69eeb492a3cc")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR011")
 					(unit 1)
@@ -5454,7 +5454,7 @@
 			(uuid "015cf899-0b42-4e36-a432-1bd7c084a242")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR028")
 					(unit 1)
@@ -5521,7 +5521,7 @@
 			(uuid "42810048-8c56-4bc3-949e-dedec8bddbaa")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR018")
 					(unit 1)
@@ -5588,7 +5588,7 @@
 			(uuid "ed72ce4c-f877-4c22-ab32-01860dc72237")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR016")
 					(unit 1)
@@ -5696,7 +5696,7 @@
 			(uuid "70fde880-5867-4e61-9a35-9c1e4f20ef89")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J9")
 					(unit 1)
@@ -5763,7 +5763,7 @@
 			(uuid "a4ebf64b-f6d4-4f53-bb43-948309b71481")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR021")
 					(unit 1)
@@ -5830,7 +5830,7 @@
 			(uuid "affb06c5-1e34-4951-8747-1a3da6413b6a")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR017")
 					(unit 1)
@@ -6031,7 +6031,7 @@
 			(uuid "6b3c3844-0bce-4b9d-8636-6021137a85ba")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR010")
 					(unit 1)
@@ -6098,7 +6098,7 @@
 			(uuid "f84d0f28-2a12-4df0-9276-02cf0cb12e47")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR09")
 					(unit 1)
@@ -6293,7 +6293,7 @@
 			(uuid "49084d77-f53e-47e3-bd84-87e37cb7d7cc")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR08")
 					(unit 1)
@@ -6468,7 +6468,7 @@
 			(uuid "b69df6f1-534e-48b0-a4e0-497f483f8000")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR012")
 					(unit 1)
@@ -6640,7 +6640,7 @@
 			(uuid "1af9b696-2ec9-49ed-babb-068270d6add0")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR06")
 					(unit 1)
@@ -6707,7 +6707,7 @@
 			(uuid "9701de60-f368-43a9-aace-577147c3240b")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR022")
 					(unit 1)
@@ -6837,7 +6837,7 @@
 			(uuid "d7698f1f-6a20-4439-bf36-0b00ea272718")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR0102")
 					(unit 1)
@@ -6904,7 +6904,7 @@
 			(uuid "2aee229e-4f7f-4128-87c0-6a75c0030da3")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR013")
 					(unit 1)
@@ -7038,7 +7038,7 @@
 			(uuid "d1f3ed9b-d98a-44b6-a1f2-cee0e288fe75")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR014")
 					(unit 1)
@@ -7146,7 +7146,7 @@
 			(uuid "ec48085c-8264-4f12-a68f-50fd3306fa2d")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "J5")
 					(unit 1)
@@ -7326,7 +7326,7 @@
 			(uuid "377ab6ba-3b42-4255-be6b-4a887cd70d4f")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "R1")
 					(unit 1)
@@ -7393,7 +7393,7 @@
 			(uuid "1872cb09-9159-40e5-a2ef-687551c9d589")
 		)
 		(instances
-			(project "TrailCurrentCabinetAndDoorSensorModule"
+			(project "TrailCurrentPicketModule"
 				(path "/ecf56a1a-1269-4e46-bc3e-998516b4714d"
 					(reference "#PWR023")
 					(unit 1)

@@ -45,7 +45,7 @@ static const uint8_t RGB_LED_PIN = 8;
 // CAN Bus Configuration
 // =============================================================================
 
-// CAN IDs 0x0A-0x11 reserved for up to 8 Cabinet/Door Sensor modules.
+// CAN IDs 0x0A-0x11 reserved for up to 8 Picket modules.
 // Higher priority (lower ID) than DeviceStatusReport (0x1B).
 // DIP switches select offset: CAN_ID = CAN_BASE_ID + dip_value (0-7)
 static const uint32_t CAN_BASE_ID = 0x0A;
@@ -271,7 +271,7 @@ void setup() {
 #if DEBUG == 0
   Serial.println("Debug disabled - no further serial output.");
 #else
-  debugln("[INIT] Cabinet & Door Sensor starting");
+  debugln("[INIT] Picket starting");
 #endif
 
   // Initialize RGB LED (built-in WS2812 on GPIO8)
