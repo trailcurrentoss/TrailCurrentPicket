@@ -13,15 +13,15 @@ To design and implement a reliable, low-power, and cost-effective microcontrolle
 
 ## 2. Microcontroller Selection
 
-**Selected Microcontroller:**  
-**ESP32C6**  
-[Datasheet](https://documentation.espressif.com/esp32-c6_datasheet_en.pdf)
+**Selected Microcontroller:**
+**ESP32-S3** (Waveshare ESP32-S3-RS485-CAN)
+[Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
-**Rationale for Selection:**  
-- Power efficient and built in can transceiver.  
-- Low price point and availability as MCU, Module, or small footprint dev board.  
-- Low power consumption.  
-- Strong ecosystem and development support.
+**Rationale for Selection:**
+- Off-the-shelf board with onboard CAN transceiver (TJA1051), buck converter (7-36V), and 20-pin header for sensor connections.
+- 13 GPIOs available on pin header with internal pull-ups — no external resistors needed.
+- Strong ecosystem and ESP-IDF development support.
+- Shared board with Solstice module, reducing BOM complexity.
 
 ---
 
@@ -51,7 +51,7 @@ To design and implement a reliable, low-power, and cost-effective microcontrolle
 
 | Component | Description |
 |----------|-------------|
-| ESP32C6 | Main microcontroller |
+| ESP32-S3 (Waveshare ESP32-S3-RS485-CAN) | Main microcontroller with onboard CAN transceiver |
 | Reed Swith | Any brand should suffice, justt needs to provide an on/off state to trigger correctly. |
 
 ### 4.2 Software Components
@@ -82,8 +82,8 @@ To design and implement a reliable, low-power, and cost-effective microcontrolle
 
 | Tool | Description |
 |------|-------------|
-| PioArduino | Development IDE |
-| Arduino | Framework used for firmware |
+| ESP-IDF | Development framework (v5.5.2) |
+| VS Code | Development IDE |
 | KiCAD | EDA Design tool for schematic and PCB |
 | FreeCAD | CAD tool used for enclosure design |
 | Version Control | Git with GitHub for repo and source control |

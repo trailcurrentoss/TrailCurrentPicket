@@ -1,0 +1,4 @@
+git@github.com:trailcurrentoss/ESP32ArduinoDebugLibrary.git
+git@github.com:trailcurrentoss/Esp32C6TwaiTaskBasedLibrary.git@0.0.3
+git@github.com:trailcurrentoss/Esp32C6OtaUpdateLibrary.git@0.0.1
+git@github.com:trailcurrentoss/C6SuperMiniRgbLedLibrary.git@0.0.1
