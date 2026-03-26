@@ -297,7 +297,7 @@ void setup() {
   // Initialize CAN bus
   TwaiTaskBased::onReceive(onCanRx);
   TwaiTaskBased::onTransmit(onCanTx);
-  TwaiTaskBased::begin(CAN_TX_PIN, CAN_RX_PIN, CAN_BAUDRATE);
+  TwaiTaskBased::begin(CAN_TX_PIN, CAN_RX_PIN, CAN_BAUDRATE, TWAI_MODE_NO_ACK);
   debugln("[INIT] TWAI started on GPIO14 (TX) / GPIO15 (RX)");
 
   // Read initial state
