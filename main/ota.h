@@ -6,9 +6,11 @@
 // OTA update window duration (3 minutes)
 #define OTA_TIMEOUT_MS 180000
 
-// CAN message IDs for OTA and WiFi config
-#define CAN_ID_OTA_TRIGGER   0x00
-#define CAN_ID_WIFI_CONFIG   0x01
+// CAN message IDs
+#define CAN_ID_OTA_TRIGGER        0x00
+#define CAN_ID_WIFI_CONFIG        0x01
+#define CAN_ID_DISCOVERY_TRIGGER  0x02
+#define CAN_ID_DISCOVERY_RESET    0x03
 
 /**
  * Initialize NVS and load WiFi credentials if available.
@@ -21,6 +23,23 @@ void ota_init(void);
  * Valid after ota_init(). Returns pointer to static buffer.
  */
 const char *ota_get_hostname(void);
+
+/**
+ * Check whether WiFi credentials have been provisioned.
+ */
+bool ota_has_credentials(void);
+
+/**
+ * Connect to WiFi using stored credentials.
+ * Blocks up to 10 seconds waiting for connection.
+ * Shared by OTA and discovery.
+ */
+void wifi_connect(void);
+
+/**
+ * Disconnect from WiFi and stop the radio.
+ */
+void wifi_disconnect(void);
 
 /**
  * Handle a CAN OTA trigger message (ID 0x00).

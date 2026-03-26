@@ -63,6 +63,23 @@ The module also listens for control messages from other nodes:
 
 - **CAN ID 0x00 - OTA Update Notification:** Contains a 3-byte MAC address suffix. If it matches this module's hostname, the module connects to WiFi using stored credentials and enters OTA update mode.
 - **CAN ID 0x01 - WiFi Credential Configuration:** Multi-message protocol to receive and store WiFi SSID and password in NVS flash for future OTA updates.
+- **CAN ID 0x02 - Discovery Trigger:** Broadcast with no payload. Unconfigured modules respond by joining WiFi and advertising via mDNS for Headwaters to discover and register them.
+- **CAN ID 0x03 - Discovery Reset:** Targeted by MAC address. Clears the configured flag so the module responds to the next discovery trigger.
+
+### Module Discovery
+
+New modules are automatically discovered by Headwaters using a one-at-a-time registration protocol:
+
+1. Headwaters sends CAN ID 0x02 (broadcast, no payload)
+2. Unconfigured modules join WiFi and advertise `_trailcurrent._tcp` via mDNS with TXT records: `type`, `addr`, `canid`, `fw`
+3. Headwaters browses mDNS, reads the metadata, and sends `GET /discovery/confirm`
+4. Module marks itself configured in NVS and tears down WiFi
+
+The discovery window is 30 seconds. The status LED blinks at 4 Hz during discovery. Already-configured modules ignore the trigger. To re-discover a module, send CAN ID 0x03 with its MAC bytes to clear the configured flag.
+
+### Firmware Version
+
+The firmware version is set in `CMakeLists.txt` via `PROJECT_VER` and reported during discovery via the `fw` mDNS TXT record. It is also available at runtime via `esp_app_get_description()`.
 
 ## GPIO Pin Assignments
 

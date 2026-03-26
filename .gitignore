@@ -15,6 +15,7 @@ build/
 sdkconfig
 sdkconfig.old
 managed_components/
+dependencies.lock
 
 # IDEs
 .vscode/

@@ -111,7 +111,7 @@ static void save_credentials(const char *ssid, const char *password)
 
 static esp_netif_t *s_netif = NULL;
 
-static void wifi_connect(void)
+void wifi_connect(void)
 {
     if (!s_has_credentials) {
         ESP_LOGE(TAG, "No WiFi credentials — OTA disabled");
@@ -151,7 +151,7 @@ static void wifi_connect(void)
     ESP_LOGE(TAG, "WiFi connection failed");
 }
 
-static void wifi_disconnect(void)
+void wifi_disconnect(void)
 {
     esp_wifi_disconnect();
     esp_wifi_stop();
@@ -317,6 +317,11 @@ void ota_init(void)
 const char *ota_get_hostname(void)
 {
     return s_hostname;
+}
+
+bool ota_has_credentials(void)
+{
+    return s_has_credentials;
 }
 
 void ota_handle_trigger(const uint8_t *data, uint8_t len)

@@ -7,6 +7,7 @@
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "ota.h"
+#include "discovery.h"
 
 static const char *TAG = "picket";
 
@@ -156,6 +157,10 @@ static void twai_task(void *arg)
                     ota_handle_trigger(msg.data, msg.data_length_code);
                 } else if (msg.identifier == CAN_ID_WIFI_CONFIG) {
                     ota_handle_wifi_config(msg.data, msg.data_length_code);
+                } else if (msg.identifier == CAN_ID_DISCOVERY_TRIGGER) {
+                    discovery_handle_trigger();
+                } else if (msg.identifier == CAN_ID_DISCOVERY_RESET) {
+                    discovery_handle_reset(msg.data, msg.data_length_code);
                 }
             }
         }
@@ -197,6 +202,7 @@ static void twai_task(void *arg)
 void app_main(void)
 {
     ota_init();
+    discovery_init();
 
     ESP_LOGI(TAG, "=== TrailCurrent Picket ===");
     ESP_LOGI(TAG, "Hostname: %s", ota_get_hostname());
