@@ -59,6 +59,7 @@ static const gpio_num_t RSW_PINS[] = {
 
 // Transmit interval (200 ms = 5 Hz)
 #define TX_INTERVAL_MS  200
+#define TX_PROBE_INTERVAL_MS  2000 // slow probe when no peers detected
 
 // Debounce time for reed switch readings
 #define DEBOUNCE_MS     50
@@ -114,13 +115,19 @@ static void twai_task(void *arg)
     uint32_t alerts = TWAI_ALERT_RX_DATA | TWAI_ALERT_ERR_PASS |
                       TWAI_ALERT_BUS_ERROR | TWAI_ALERT_RX_QUEUE_FULL |
                       TWAI_ALERT_BUS_OFF | TWAI_ALERT_BUS_RECOVERED |
-                      TWAI_ALERT_ERR_ACTIVE;
+                      TWAI_ALERT_ERR_ACTIVE | TWAI_ALERT_TX_FAILED |
+                      TWAI_ALERT_TX_SUCCESS;
     twai_reconfigure_alerts(alerts, NULL);
     ESP_LOGI(TAG, "TWAI driver started (NORMAL mode)");
 
+    typedef enum { TX_ACTIVE, TX_PROBING } tx_state_t;
     bool bus_off = false;
+    tx_state_t tx_state = TX_ACTIVE;
+    int tx_fail_count = 0;
+    const int TX_FAIL_THRESHOLD = 3;
     int64_t last_tx_us = 0;
     const int64_t tx_period_us = TX_INTERVAL_MS * 1000LL;
+    const int64_t tx_probe_period_us = TX_PROBE_INTERVAL_MS * 1000LL;
 
     // Debounce state (owned by this task)
     uint16_t last_raw_state = read_reed_switches();
@@ -142,13 +149,37 @@ static void twai_task(void *arg)
             ESP_LOGI(TAG, "TWAI bus recovered, restarting");
             twai_start();
             bus_off = false;
+            tx_fail_count = 0;
+            tx_state = TX_PROBING;
         }
         if (triggered & TWAI_ALERT_ERR_PASS) {
             ESP_LOGW(TAG, "TWAI error passive (no peers ACKing?)");
         }
+        if (triggered & TWAI_ALERT_TX_FAILED) {
+            if (tx_state == TX_ACTIVE) {
+                tx_fail_count++;
+                if (tx_fail_count >= TX_FAIL_THRESHOLD) {
+                    tx_state = TX_PROBING;
+                    ESP_LOGW(TAG, "TWAI no peers detected, entering slow probe");
+                }
+            }
+        }
+        if (triggered & TWAI_ALERT_TX_SUCCESS) {
+            if (tx_state == TX_PROBING) {
+                tx_state = TX_ACTIVE;
+                tx_fail_count = 0;
+                ESP_LOGI(TAG, "TWAI probe ACK'd, peer detected, resuming normal TX");
+            }
+            tx_fail_count = 0;
+        }
 
         // --- Drain received messages ---
         if (triggered & TWAI_ALERT_RX_DATA) {
+            if (tx_state == TX_PROBING) {
+                tx_state = TX_ACTIVE;
+                tx_fail_count = 0;
+                ESP_LOGI(TAG, "TWAI peer detected via RX, resuming normal TX");
+            }
             twai_message_t msg;
             while (twai_receive(&msg, 0) == ESP_OK) {
                 if (msg.rtr) continue;
@@ -179,7 +210,8 @@ static void twai_task(void *arg)
         s_debounced_state = debounced;
 
         // --- Periodic transmit ---
-        if (!bus_off && (now_us - last_tx_us >= tx_period_us)) {
+        int64_t effective_period = (tx_state == TX_PROBING) ? tx_probe_period_us : tx_period_us;
+        if (!bus_off && (now_us - last_tx_us >= effective_period)) {
             last_tx_us = now_us;
 
             twai_message_t tx_msg = {
