@@ -295,7 +295,7 @@ void app_main(void)
     ESP_LOGI(TAG, "Module address: %d, CAN ID: 0x%02X", PICKET_ADDRESS, (unsigned)s_can_message_id);
 
     // CAN runs in its own task so bus errors never block app_main
-    xTaskCreate(twai_task, "twai", 4096, NULL, 5, NULL);
+    xTaskCreatePinnedToCore(twai_task, "twai", 4096, NULL, 5, NULL, 1);
 
     ESP_LOGI(TAG, "=== Setup Complete ===");
 
