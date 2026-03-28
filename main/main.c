@@ -6,6 +6,7 @@
 #include "driver/twai.h"
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "wifi_config.h"
 #include "ota.h"
 #include "discovery.h"
 
@@ -44,6 +45,11 @@ static const gpio_num_t RSW_PINS[] = {
 // =============================================================================
 // CAN Bus Configuration
 // =============================================================================
+
+// CAN protocol IDs
+#define CAN_ID_OTA              0x00
+#define CAN_ID_WIFI_CONFIG      0x01
+#define CAN_ID_DISCOVERY_TRIGGER 0x02
 
 // CAN IDs 0x0A-0x11 reserved for up to 8 Picket modules.
 // Set address at build time: idf.py build -DPICKET_ADDRESS=3
@@ -184,15 +190,31 @@ static void twai_task(void *arg)
             while (twai_receive(&msg, 0) == ESP_OK) {
                 if (msg.rtr) continue;
 
-                if (msg.identifier == CAN_ID_OTA_TRIGGER) {
-                    ota_handle_trigger(msg.data, msg.data_length_code);
-                } else if (msg.identifier == CAN_ID_WIFI_CONFIG) {
-                    ota_handle_wifi_config(msg.data, msg.data_length_code);
-                } else if (msg.identifier == CAN_ID_DISCOVERY_TRIGGER) {
+                switch (msg.identifier) {
+                case CAN_ID_OTA:
+                    if (msg.data_length_code >= 3) {
+                        ota_handle_trigger(msg.data, msg.data_length_code);
+                    }
+                    break;
+
+                case CAN_ID_WIFI_CONFIG:
+                    if (msg.data_length_code >= 1) {
+                        wifi_config_handle_can(msg.data, msg.data_length_code);
+                    }
+                    break;
+
+                case CAN_ID_DISCOVERY_TRIGGER:
                     discovery_handle_trigger();
+                    break;
+
+                default:
+                    break;
                 }
             }
         }
+
+        // Check wifi config timeout
+        wifi_config_check_timeout();
 
         // --- Debounce reed switches ---
         uint16_t raw = read_reed_switches();
@@ -231,11 +253,24 @@ static void twai_task(void *arg)
 
 void app_main(void)
 {
-    ota_init();
-    discovery_init();
-
     ESP_LOGI(TAG, "=== TrailCurrent Picket ===");
-    ESP_LOGI(TAG, "Hostname: %s", ota_get_hostname());
+
+    // Initialize NVS and load WiFi credentials
+    ESP_ERROR_CHECK(wifi_config_init());
+
+    char ssid[33] = {0};
+    char password[64] = {0};
+    if (wifi_config_load(ssid, sizeof(ssid), password, sizeof(password))) {
+        ESP_LOGI(TAG, "WiFi credentials loaded from NVS");
+    } else {
+        ESP_LOGI(TAG, "No WiFi credentials — OTA disabled until provisioned via CAN");
+    }
+
+    // Initialize discovery and OTA (must be after wifi_config_init)
+    discovery_init();
+    ota_init();
+
+    ESP_LOGI(TAG, "Hostname: %s", wifi_config_get_hostname());
 
     // Configure status LED
     gpio_config_t led_cfg = {
@@ -262,7 +297,7 @@ void app_main(void)
     // CAN runs in its own task so bus errors never block app_main
     xTaskCreate(twai_task, "twai", 4096, NULL, 5, NULL);
 
-    ESP_LOGI(TAG, "Setup complete");
+    ESP_LOGI(TAG, "=== Setup Complete ===");
 
     // Main task has nothing else to do — park it
     while (1) {
