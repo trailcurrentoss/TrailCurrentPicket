@@ -27,8 +27,6 @@ static const char *TAG = "discovery";
 #define PICKET_ADDRESS 0
 #endif
 
-#define CAN_BASE_ID 0x0A
-
 // ---------------------------------------------------------------------------
 // Discovery state
 // ---------------------------------------------------------------------------
@@ -80,9 +78,7 @@ static void discovery_mdns_start(void)
     const char *hostname = wifi_config_get_hostname();
 
     char addr_str[4];
-    char canid_str[8];
     snprintf(addr_str, sizeof(addr_str), "%d", PICKET_ADDRESS);
-    snprintf(canid_str, sizeof(canid_str), "0x%02X", CAN_BASE_ID + PICKET_ADDRESS);
 
     const esp_app_desc_t *app = esp_app_get_description();
 
@@ -93,15 +89,14 @@ static void discovery_mdns_start(void)
     mdns_txt_item_t txt[] = {
         { "type",  MODULE_TYPE },
         { "addr",  addr_str },
-        { "canid", canid_str },
         { "fw",    app->version },
     };
 
     mdns_service_add("TrailCurrent Discovery", "_trailcurrent", "_tcp",
                      80, txt, sizeof(txt) / sizeof(txt[0]));
 
-    ESP_LOGI(TAG, "mDNS discovery: %s.local type=%s addr=%s canid=%s fw=%s",
-             hostname, MODULE_TYPE, addr_str, canid_str, app->version);
+    ESP_LOGI(TAG, "mDNS discovery: %s.local type=%s addr=%s fw=%s",
+             hostname, MODULE_TYPE, addr_str, app->version);
 }
 
 // ---------------------------------------------------------------------------
