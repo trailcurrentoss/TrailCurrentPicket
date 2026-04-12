@@ -45,6 +45,47 @@ idf.py build -DPICKET_ADDRESS=3
 | 6                 | 0x10   | PicketStatus6        |
 | 7                 | 0x11   | PicketStatus7        |
 
+#### Building All Variants
+
+Use `build-all.sh` to build all 8 address variants in a single run:
+
+```bash
+./build-all.sh
+```
+
+This produces:
+
+```
+build/picket_addr0.bin   # Address 0 (CAN ID 0x0A)
+build/picket_addr1.bin   # Address 1 (CAN ID 0x0B)
+...
+build/picket_addr7.bin   # Address 7 (CAN ID 0x11)
+```
+
+#### Creating a GitHub Release
+
+After building all variants, upload all 8 binaries as release assets:
+
+```bash
+git tag -a v1.0.0 -m "Firmware release v1.0.0"
+git push origin v1.0.0
+
+gh release create v1.0.0 \
+  build/picket_addr0.bin \
+  build/picket_addr1.bin \
+  build/picket_addr2.bin \
+  build/picket_addr3.bin \
+  build/picket_addr4.bin \
+  build/picket_addr5.bin \
+  build/picket_addr6.bin \
+  build/picket_addr7.bin \
+  --repo trailcurrentoss/TrailCurrentPicket \
+  --title "v1.0.0" \
+  --notes "Firmware release v1.0.0"
+```
+
+The Headwaters deployment system and the web-based firmware installer both expect these 8 files per release. The naming convention `{type}_addr{N}.bin` is required.
+
 ### CAN Message Format
 
 Each module transmits a 2-byte message at 5 Hz (200 ms interval):
@@ -65,6 +106,7 @@ The module also listens for control messages from other nodes:
 - **CAN ID 0x01 - WiFi Credential Configuration:** Multi-message protocol to receive and store WiFi SSID and password in NVS flash for future OTA updates.
 - **CAN ID 0x02 - Discovery Trigger:** Broadcast with no payload. Unconfigured modules respond by joining WiFi and advertising via mDNS for Headwaters to discover and register them.
 - **CAN ID 0x03 - Discovery Reset:** Targeted by MAC address. Clears the configured flag so the module responds to the next discovery trigger.
+- **CAN ID 0x04 - Firmware Version Report:** Sent once on boot. Payload: `[mac3, mac4, mac5, major, minor, patch]`. Reports running firmware version to Headwaters.
 
 ### Module Discovery
 
@@ -167,7 +209,8 @@ idf.py -p /dev/ttyACM0 monitor
 ### OTA Update
 
 ```bash
-curl -X POST http://esp32-XXYYZZ.local/ota --data-binary @build/picket.bin
+# Use the binary matching the module's address
+curl -X POST http://esp32-XXYYZZ.local/ota --data-binary @build/picket_addr0.bin
 ```
 
 Where `XXYYZZ` is the last 3 bytes of the device's WiFi MAC address (printed at boot).
@@ -206,13 +249,15 @@ Where `XXYYZZ` is the last 3 bytes of the device's WiFi MAC address (printed at 
 │       ├── *.kicad_sch           # Schematic
 │       └── *.kicad_pcb           # PCB layout
 ├── main/                         # ESP-IDF firmware source
-│   ├── main.c                    # Main application
-│   ├── ota.c                     # OTA update implementation
-│   ├── ota.h                     # OTA public API
+│   ├── main.c                    # Main application, CAN task, reed switch reading
+│   ├── discovery.h / discovery.c # mDNS self-discovery and Headwaters registration
+│   ├── ota.h / ota.c             # OTA firmware updates via WiFi
+│   ├── wifi_config.h / .c        # WiFi credential storage and CAN provisioning
 │   ├── CMakeLists.txt            # Component build config
-│   └── idf_component.yml        # Component dependencies
+│   └── idf_component.yml         # Component dependencies
 ├── CMakeLists.txt                # ESP-IDF project root
 ├── partitions.csv                # Flash partition layout
+├── build-all.sh                  # Build all 8 address variants (addr 0-7)
 └── sdkconfig.defaults            # Default build configuration
 ```
 
